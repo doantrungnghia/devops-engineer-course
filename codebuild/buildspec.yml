@@ -22,7 +22,7 @@ phases:
       - docker push 623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/laraveldemo-php:${CODEBUILD_RESOLVED_SOURCE_VERSION}
       - docker push 623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/laraveldemo-nginx:${CODEBUILD_RESOLVED_SOURCE_VERSION}
       - sed -e "s|<GIT_TAG>|$CODEBUILD_RESOLVED_SOURCE_VERSION|g" ./codedeploy/taskdef_template.json > ./codedeploy/taskdef.json
-      - TASK_DEFINITIccON=`aws ecs register-task-definition --region ap-southeast-1  --cli-input-json file://codedeploy/taskdef.json | jq ".taskDefinition.taskDefinitionArn"`
+      - TASK_DEFINITION=`aws ecs register-task-definition --region ap-southeast-1  --cli-input-json file://codedeploy/taskdef.json | jq ".taskDefinition.taskDefinitionArn"`
       - sed -e "s|<TASK_DEFINITION>|$TASK_DEFINITION|g" ./codedeploy/appspec_template.yaml > ./codedeploy/appspec.yaml
 artifacts:
   files:
