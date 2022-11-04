@@ -19,7 +19,7 @@
       "cpu": 128,
       "memory": 256,
       "memoryReservation": 256,
-      "image": "623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/lamhaison-laravel-demo-nginx:<GIT_TAG>",
+      "image": "623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/laraveldemo-nginx:<GIT_TAG>",
       "links": ["php"],
       "hostname": "lamhaison-dev-laravel-demo-nginx",
       "name": "nginx"
@@ -42,7 +42,7 @@
       ],
       "memory": 256,
       "memoryReservation": 256,
-      "image": "623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/lamhaison-laravel-demo-php:<GIT_TAG>",
+      "image": "623329417408.dkr.ecr.ap-southeast-1.amazonaws.com/laraveldemo-php:<GIT_TAG>",
       "hostname": "php",
       "name": "php"
     }
